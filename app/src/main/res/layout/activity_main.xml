@@ -19,12 +19,31 @@
             android:background="#fff"
             android:layout_height="match_parent">
 
-            <TextView
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:textColor="#000"
-                android:text="Activity Content"
-                android:layout_height="wrap_content" />
+            <android.support.v4.widget.SwipeRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swipe_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Hello World"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"/>
+                </ScrollView>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+            <!--<TextView-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:textColor="#000"-->
+                <!--android:text="Activity Content"-->
+                <!--android:layout_height="wrap_content" />-->
         </RelativeLayout>
 
         <!-- navigation drawer -->
@@ -40,7 +59,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:autoText="false"
-                android:hint="Subreddit Name" />
+                android:hint="Subreddit Name"
+                android:singleLine="true"
+                android:imeOptions="actionGo"/>
             <ListView
                 android:id="@+id/left_drawer"
                 android:layout_width="match_parent"
